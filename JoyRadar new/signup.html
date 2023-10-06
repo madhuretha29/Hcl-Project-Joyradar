@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+             background-image: url('signup-bg.jpg'); /* Replace 'your-image-url.jpg' with the actual URL of your image */
+             background-size: cover; /* This will make the image cover the entire screen */
+             background-position: center; /* This will center the image */
+             background-repeat: no-repeat; /* This will prevent the image from repeating */
+             /* The rest of your existing styles */
+             /* For example, you can keep your gradient background as well */
+             /*background: linear-gradient(to bottom right, #3490dc, #9561e2, #f66d9b);*/
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             height: 100vh; /* This will make the body take up the full viewport height */
+         } 
+ </style>
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h1 class="text-3xl font-semibold mb-6 text-center">Signup</h1>
+        <form id="signupForm">
+            <div class="mb-4">
+                <label for="signupUsername" class="block text-gray-600 font-semibold">Username:</label>
+                <input name="username" type="text" id="signupUsername" class="w-full p-2 border rounded shadow-sm" required>
+            </div>
+            <div class="mb-4">
+                <label for="signupEmail" class="block text-gray-600 font-semibold">Email:</label>
+                <input name="email" type="email" id="signupEmail" class="w-full p-2 border rounded shadow-sm" required>
+            </div>
+            <div class="mb-6">
+                <label for="signupPassword" class="block text-gray-600 font-semibold">Password:</label>
+                <input name="password" type="password" id="signupPassword" class="w-full p-2 border rounded shadow-sm" required>
+            </div>
+            <div class="text-center">
+                <button type="button" onclick="createAccount()" class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600">Signup</button>
+            </div>
+        </form>
+        <div class="text-center mt-4">
+            <p class="text-gray-600">Already have an account?</p>
+            <a href="index.html" class="text-blue-500 font-semibold hover:underline">Login</a>
+        </div>
+    </div>
+
+   <script>
+        function createAccount() {
+            const newUsername = document.getElementById("signupUsername").value;
+            const newEmail = document.getElementById("signupEmail").value;
+            const newPassword = document.getElementById("signupPassword").value;
+
+            // You can perform account creation logic here (e.g., API call, database operation).
+
+            alert("Account created successfully. You can now login with your new credentials.");
+
+            // Redirect to the login page after signup
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
